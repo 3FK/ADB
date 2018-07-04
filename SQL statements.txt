@@ -11,3 +11,10 @@ CREATE TABLE telecommunication_mean("telecommuni_ID" VARCHAR2(20),"Rover_ID" VAR
 INSERT INTO telecommunication_mean("telecommuni_ID","Rover_ID","telecommunicat_Name","telecommunicationtype") VALUES ()');
 
 DROP TABLE telecommunication_mean;
+
+
+SELECT TABLE_NAME, COLUMN_NAME, DATA_TYPE, DATA_LENGTH, LAST_ANALYZED
+FROM DBA_TAB_COLUMNS
+WHERE OWNER = 'XE'
+ORDER BY TABLE_NAME;
+/
