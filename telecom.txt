@@ -1,10 +1,12 @@
 table TELECOMMUNICATION_MEAN
 CREATE TABLE TELECOMMUNICATION_MEAN(
-Telecommunication_Id VARCHAR(12) PRIMARY KEY,
+Telecommunication_Id VARCHAR(12),
 Telecommunication_Name VARCHAR(20) UNIQUE,
 Telecommunication_Type varchar(20),
+Purpose varchar(100),
 Rover_ID varchar(10),
-FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID)
+CONSTRAINT FK_Telecommunication_Mean FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
+CONSTRAINT PK_Telecommunication_Mean PRIMARY KEY(Telecommunication_Id,Rover_ID)
 )
 /
 CREATE SEQUENCE Telecommunication_seq
@@ -23,6 +25,14 @@ BEGIN
   FROM   dual;
 END;
 /
+
+DROP TABLE TELECOMMUNICATION_MEAN;
+
+
+
+
+
+
 
 CREATE OR REPLACE FUNCTION getRoverId (rover_Name IN varchar)
 RETURN varchar AS

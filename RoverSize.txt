@@ -1,8 +1,6 @@
 CREATE TABLE ROVER_SIZE(
 Rover_Size_Id VARCHAR(12),
-Rover_Long NUMBER(3,1),
-Rover_Wide NUMBER(3,1),
-Rover_Height NUMBER(3,1),
+
 Rover_ID varchar(10),
 FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
 CONSTRAINT PK_Rover_Size PRIMARY KEY (Rover_ID,Rover_Size_Id)

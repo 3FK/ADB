@@ -3,7 +3,7 @@ Rover_Computer_Id VARCHAR(12),
 Computer_OS varchar(50),
 Computer_Purpose varchar(300),
 Rover_ID varchar(10),
-FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
+CONSTRAINT FK_Rover_Computer_Element FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
 CONSTRAINT PK_Rover_Computer_Element PRIMARY KEY (Rover_ID,Rover_Computer_Id)
 )
 /
@@ -29,7 +29,7 @@ Computer_Memory_Id varchar(12),
 Computer_Memory_Type varchar(10),
 Computer_Memory_Capacity NUMBER(10),
 Rover_Computer_Id VARCHAR(12),
-FOREIGN KEY (Rover_Computer_Id) REFERENCES ROVER_COMPUTER_ELEMENT(Rover_Computer_Id),
+CONSTRAINT FK_Rover_Computer_Memory FOREIGN KEY (Rover_Computer_Id) REFERENCES ROVER_COMPUTER_ELEMENT(Rover_Computer_Id),
 CONSTRAINT PK_Rover_Computer_Memory PRIMARY KEY (Rover_Computer_Id,Computer_Memory_Id)
 )
 /

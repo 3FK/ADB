@@ -1,10 +1,13 @@
 CREATE TABLE ROVER(
 ROVER_ID  varchar(10) PRIMARY KEY,
-ROVER_Name varchar(50),
-Launched_Date char(10),
-Launched_Time char(7),
-Launched_From varchar(50),
-Mass NUMBER(5),
+ROVER_Name varchar(50) NOT NULL,
+Rover_Long NUMBER(3,1) NOT NULL,
+Rover_Wide NUMBER(3,1) NOT NULL,
+Rover_Height NUMBER(3,1) NOT NULL,
+Launched_Date char(10) NOT NULL,
+Launched_Time char(7) NOT NULL,
+Launched_From varchar(50) NOT NULL,
+Mass NUMBER(5) NOT NULL,
 Landed_Date char(10),
 Landed_Time char(7),
 Landed_To varchar(50)
@@ -28,5 +31,7 @@ BEGIN
   FROM   dual;
 END;
 /
+
+DROP TABLE ROVER;
 
 UPDATE  ROVER SET ROVER_Name = :Rover_Name,Launched_Date=:Launched_Date,Launched_From= :Launched_From,Mass= :Mass,Landed_Date= :Landed_Date,Landed_to=:Landed_To WHERE ROVER_ID = '$rover'   "

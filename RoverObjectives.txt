@@ -3,8 +3,8 @@ Rover_Objective_Id VARCHAR(12),
 Objective_Type varchar(50),
 Objective varchar(300),
 Rover_ID varchar(10),
-FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
-CONSTRAINT PK_Rover_Size PRIMARY KEY (Rover_ID,Rover_Objective_Id)
+CONSTRAINT FK_Rover_Objectives FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
+CONSTRAINT PK_Rover_Objectives PRIMARY KEY (Rover_ID,Rover_Objective_Id)
 )
 /
 CREATE SEQUENCE Rover_Objective_seq

@@ -3,8 +3,8 @@ Rover_Wheel_Id VARCHAR(12),
 Wheel_Diameter NUMBER(2,2),
 Wheel_Position varchar(20),
 Rover_ID varchar(10),
-FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
-CONSTRAINT PK_Rover_Size PRIMARY KEY (Rover_ID,Rover_Size_Id)
+CONSTRAINT FK_Wheels FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
+CONSTRAINT PK_Wheels PRIMARY KEY (Rover_ID,Rover_Size_Id)
 )
 /
 CREATE SEQUENCE Rover_Wheels_seq

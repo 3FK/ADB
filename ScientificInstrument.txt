@@ -1,11 +1,10 @@
 CREATE TABLE ROVER_SCIENTIFIC_INSTRUMENTS(
 Rover_Scientific_Instrument_Id VARCHAR(12),
-Instrument_Name varchar(20),
-Mass NUMBER(3,3),
 Instrument_Type varchar (20),
+Mass NUMBER(3,3),
 Rover_ID varchar(10),
-FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
-CONSTRAINT PK_Rover_Size PRIMARY KEY (Rover_ID,Rover_Scientific_Instrument_Id)
+CONSTRAINT FK_Scientific_Instrument FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
+CONSTRAINT PK_Scientific_Instrument PRIMARY KEY (Rover_ID,Rover_Scientific_Instrument_Id)
 )
 /
 CREATE SEQUENCE Scientific_Instrument_seq
