@@ -29,9 +29,9 @@ if(isset($_POST['Update_record'])) {
 }
 //----------delete------
 if(isset($_POST['Del_record'])) {
-    $rover = $_POST['rover'];
+    $rover = $_POST['rovers'];
 
-    $sql2 = "DELETE FROM ROVER WHERE ROVER_ID = '$rovers'";
+    $sql2 = "DELETE FROM ROVER WHERE ROVER_ID = '$rover'";
     $compiled1 = oci_parse($conn, $sql2);
     $ex = oci_execute($compiled1, OCI_DEFAULT);
     if ($ex) {
@@ -126,13 +126,13 @@ if(isset($_POST['Select_record'])) {
 
                             </div>
                             <div>
-                                <input class="btn btn-lg btn-danger btn-block" type="submit" name="Select_record" value="Get Rover Details"  >
+                                <input class="btn btn-lg btn-danger btn-block" type="submit" name="Select_record" value="Get Rover Details" >
                             </div>
 
 
                             <div class="form-group">
-                                <label class="label-default">Rover Name</label>
-                                <input class="form-control" disabled placeholder="Rover Name" name="rovers" type="text"  value="<?php echo htmlentities($roid); ?>">
+                                <label class="label-default">Rover ID</label>
+                                <input class="form-control" placeholder="Rover Name" name="rovers" type="text"  value="<?php echo htmlentities($roid); ?>">
                             </div>
 
                             <div class="form-group">
