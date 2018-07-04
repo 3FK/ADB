@@ -58,15 +58,15 @@ if(isset($_POST['Select_record'])) {
         $roLandedTO= $row['LANDED_TO'];
 
 
-        echo  $roid;
-
-
-        echo  $roname;
-        echo  $roLdate;
-        echo  $roLfrom;
-        echo  $roMass;
-        echo  $roLandedDATE;
-        echo  $roLandedTO;
+//        echo  $roid;
+//
+//
+//        echo  $roname;
+//        echo  $roLdate;
+//        echo  $roLfrom;
+//        echo  $roMass;
+//        echo  $roLandedDATE;
+//        echo  $roLandedTO;
         //echo "<option value='" . $row['ROVER_ID'] . "'>" . $row['ROVER_ID'] . "</option>";
 //        echo"<tr>";
 //    echo"<td><input type=\"text\" name=\"user_id\" value=\".$row['user_id']."\"></td>";
@@ -126,13 +126,13 @@ if(isset($_POST['Select_record'])) {
 
                             </div>
                             <div>
-                                <input class="btn btn-lg btn-danger btn-block" type="submit" name="Select_record" value="Get Rover Details" >
+                                <input class="btn btn-lg btn-danger btn-block" type="submit" name="Select_record" value="Get Rover Details"  >
                             </div>
 
 
                             <div class="form-group">
                                 <label class="label-default">Rover Name</label>
-                                <input class="form-control" placeholder="Rover Name" name="rovers" type="text"  value="<?php echo htmlentities($roid); ?>">
+                                <input class="form-control" disabled placeholder="Rover Name" name="rovers" type="text"  value="<?php echo htmlentities($roid); ?>">
                             </div>
 
                             <div class="form-group">
