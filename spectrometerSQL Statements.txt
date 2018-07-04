@@ -1,0 +1,19 @@
+
+spectrometer table
+
+
+CREATE TABLE SPECTROMETER("SPECTROMETER_ID" VARCHAR2(5),"Rover_ID" VARCHAR2(5),"SPECTROMETER_NAME" VARCHAR2(40),"SPECTROMETER_TYPE" VARCHAR2(40));
+
+DROP TABLE SPECTROMETER;
+
+
+
+UPDATE  ROVER SET 
+ROVER_Name = 'gggg',
+Launched_Date= 'dsadas',
+Launched_From= 'gggggg',
+Mass= 85,
+Landed_Date= 'jgj',
+Landed_to='hkgk'
+WHERE ROVER_ID = 'RID 00016';
+/ 

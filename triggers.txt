@@ -1,0 +1,27 @@
+CREATE TABLE admin(
+ID  varchar(20) PRIMARY KEY,
+NAME varchar(200),
+AGE INT
+)
+/
+
+CREATE SEQUENCE admin_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+/
+
+CREATE OR REPLACE TRIGGER adminId_Trigger
+BEFORE INSERT ON admin
+FOR EACH ROW
+
+BEGIN
+  SELECT 'admin'|| to_char(admin_seq.NEXTVAL,'0000099')
+  INTO   :new.id
+  FROM   dual;
+END;
+/
+
+INSERT INTO ROVER ("ROVER_Name","Launched_Date","Launched_From","Mass","Landed_Date","Landed_To") VALUES('Rover_Name,'Launched_Date','Launched_From',80,'Landed_Date','Landed_To')
+
