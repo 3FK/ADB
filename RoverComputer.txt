@@ -1,12 +1,10 @@
-CREATE TABLE ROVER_COMPUTER_Element(
+CREATE TABLE ROVER_COMPUTER_ELEMENT(
 Rover_Computer_Id VARCHAR(12),
 Computer_OS varchar(50),
-Computer_EEPROM varchar(10),
-Computer_DRAM varchar(10),
-Computer_Flash_Memory varchar(10),
+Computer_Purpose varchar(300),
 Rover_ID varchar(10),
 FOREIGN KEY (Rover_ID) REFERENCES ROVER(ROVER_ID),
-CONSTRAINT PK_Rover_Size PRIMARY KEY (Rover_ID,Rover_Computer_Id)
+CONSTRAINT PK_Rover_Computer_Element PRIMARY KEY (Rover_ID,Rover_Computer_Id)
 )
 /
 CREATE SEQUENCE Rover_Computer_seq
@@ -17,11 +15,37 @@ NOCYCLE;
 /
 
 CREATE OR REPLACE TRIGGER Rover_Computer_Id_Trigger
-BEFORE INSERT ON ROVER_WHEELS
+BEFORE INSERT ON ROVER_COMPUTER_ELEMENT
 FOR EACH ROW
 BEGIN
   SELECT 'RCID'|| to_char(Rover_Computer_seq.NEXTVAL,'00099')
   INTO   :new.Rover_Computer_Id
+  FROM   dual;
+END;
+/
+-----------------ComputerMemory---------------
+CREATE TABLE ROVER_COMPUTER_MEMORY(
+Computer_Memory_Id varchar(12),
+Computer_Memory_Type varchar(10),
+Computer_Memory_Capacity NUMBER(10),
+Rover_Computer_Id VARCHAR(12),
+FOREIGN KEY (Rover_Computer_Id) REFERENCES ROVER_COMPUTER_ELEMENT(Rover_Computer_Id),
+CONSTRAINT PK_Rover_Computer_Memory PRIMARY KEY (Rover_Computer_Id,Computer_Memory_Id)
+)
+/
+CREATE SEQUENCE Rover_Computer_Memory_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+/
+
+CREATE OR REPLACE TRIGGER Rover_Computer_Id_Trigger
+BEFORE INSERT ON ROVER_COMPUTER_MEMORY
+FOR EACH ROW
+BEGIN
+  SELECT 'RCMID'|| to_char(Rover_Computer_Memory_seq.NEXTVAL,'00099')
+  INTO   :new.Computer_Memory_Id
   FROM   dual;
 END;
 /
