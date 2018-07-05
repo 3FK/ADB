@@ -1,4 +1,4 @@
-CREATE TABLE ROVER_COMPUTER_ELEMENT(
+CREATE TABLE ROVER_COMPUTER_ELEMENT (
 Rover_Computer_Id VARCHAR(12),
 Computer_OS varchar(50),
 Computer_Purpose varchar(300),
